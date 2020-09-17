@@ -34,56 +34,56 @@ void setBlue()
 
 void setMagenta()
 {
-    std::cout << "\003[35m";
+    std::cout << "\033[35m";
 }
 
 void setCyan()
 {
-    std::cout << "\003[36m";
+    std::cout << "\033[36m";
 }
 
 void setWhite()
 {
-    std::cout << "\003[37m";
+    std::cout << "\033[37m";
 }
 
 // Brighter colors
 void setGray()
 {
-    std::cout << "\003[90m";
+    std::cout << "\033[90m";
 }
 
 void setBrightRed()
 {
-    std::cout << "\003[91m";
+    std::cout << "\033[91m";
 }
 
 void setBrightGreen()
 {
-    std::cout << "\003[92m";
+    std::cout << "\033[92m";
 }
 
 void setBrightYellow()
 {
-    std::cout << "\003[93m";
+    std::cout << "\033[93m";
 }
 
 void setBrightBlue()
 {
-    std::cout << "\003[94m";
+    std::cout << "\033[94m";
 }
 
 void setBrightMagenta()
 {
-    std::cout << "\003[95m";
+    std::cout << "\033[95m";
 }
 
 void setBrightCyan()
 {
-    std::cout << "\003[96m";
+    std::cout << "\033[96m";
 }
 
 void setBrightWhite()
 {
-    std::cout << "\003[97m";
+    std::cout << "\033[97m";
 }

@@ -6,84 +6,201 @@
 
 // The layout is simple - To set a color, write "set", and then the color.
 // For example, "setBlack()" sets the color to be black
-
-void setBlack()
+enum layer
 {
-    std::cout << "\033[30m";
+    FOREGROUND,
+    BACKGROUND
+};
+
+void setBlack(layer foreground = FOREGROUND)
+{
+    if (foreground == FOREGROUND)
+    {
+        std::cout << "\033[30m";
+    }
+    else
+    {
+        std::cout << "\033[40";
+    }
 }
 
-void setRed()
+void setRed(layer foreground = FOREGROUND)
 {
-    std::cout << "\033[31m";
+    if (foreground == FOREGROUND)
+    {
+        std::cout << "\033[31m";
+    }
+    else
+    {
+        std::cout << "\033[41m";
+    }
 }
 
-void setGreen()
+void setGreen(layer foreground = FOREGROUND)
 {
-    std::cout << "\033[32m";
+    if (foreground == FOREGROUND)
+    {
+        std::cout << "\033[32m";
+    }
+    else
+    {
+        std::cout << "\033[42m";
+    }
 }
 
-void setYellow()
+void setYellow(layer foreground = FOREGROUND)
 {
-    std::cout << "\033[33m";
+    if (foreground == FOREGROUND)
+    {
+        std::cout << "\033[33m";
+    }
+    else
+    {
+        std::cout << "\033[43m";
+    }
 }
 
-void setBlue()
+void setBlue(layer foreground = FOREGROUND)
 {
-    std::cout << "\033[34m";
+    if (foreground == FOREGROUND)
+    {
+        std::cout << "\033[34m";
+    }
+    else
+    {
+        std::cout << "\033[44m";
+    }
 }
 
-void setMagenta()
+void setMagenta(layer foreground = FOREGROUND)
 {
-    std::cout << "\033[35m";
+    if (foreground == FOREGROUND)
+    {
+        std::cout << "\033[35m";
+    }
+    else
+    {
+        std::cout << "\033[45m";
+    }
 }
 
-void setCyan()
+void setCyan(layer foreground = FOREGROUND)
 {
-    std::cout << "\033[36m";
+    if (foreground == FOREGROUND)
+    {
+        std::cout << "\033[36m";
+    }
+    else
+    {
+        std::cout << "\033[46m";
+    }
 }
 
-void setWhite()
+void setWhite(layer foreground = FOREGROUND)
 {
-    std::cout << "\033[37m";
+    if (foreground == FOREGROUND)
+    {
+        std::cout << "\033[37m";
+    }
+    else
+    {
+        std::cout << "\033[47m";
+    }
 }
 
 // Brighter colors
-void setGray()
+void setGray(layer foreground = FOREGROUND)
 {
-    std::cout << "\033[90m";
+    if (foreground == FOREGROUND)
+    {
+        std::cout << "\033[90m";
+    }
+    else
+    {
+        std::cout << "\033[100m";
+    }
 }
 
-void setBrightRed()
+void setBrightRed(layer foreground = FOREGROUND)
 {
-    std::cout << "\033[91m";
+    if (foreground == FOREGROUND)
+    {
+        std::cout << "\033[91m";
+    }
+    else
+    {
+        std::cout << "\033[101m";
+    }
 }
 
-void setBrightGreen()
+void setBrightGreen(layer foreground = FOREGROUND)
 {
-    std::cout << "\033[92m";
+    if (foreground == FOREGROUND)
+    {
+        std::cout << "\033[92m";
+    }
+    else
+    {
+        std::cout << "\033[102m";
+    }
 }
 
-void setBrightYellow()
+void setBrightYellow(layer foreground = FOREGROUND)
 {
-    std::cout << "\033[93m";
+    if (foreground == FOREGROUND)
+    {
+        std::cout << "\033[93m";
+    }
+    else
+    {
+        std::cout << "\033[103m";
+    }
 }
 
-void setBrightBlue()
+void setBrightBlue(layer foreground = FOREGROUND)
 {
-    std::cout << "\033[94m";
+    if (foreground == FOREGROUND)
+    {
+        std::cout << "\033[94m";
+    }
+    else
+    {
+        std::cout << "\033[104m";
+    }
 }
 
-void setBrightMagenta()
+void setBrightMagenta(layer foreground = FOREGROUND)
 {
-    std::cout << "\033[95m";
+    if (foreground == FOREGROUND)
+    {
+        std::cout << "\033[95m";
+    }
+    else
+    {
+        std::cout << "\033[105m";
+    }
 }
 
-void setBrightCyan()
+void setBrightCyan(layer foreground = FOREGROUND)
 {
-    std::cout << "\033[96m";
+    if (foreground == FOREGROUND)
+    {
+        std::cout << "\033[96m";
+    }
+    else
+    {
+        std::cout << "\033[106m";
+    }
 }
 
-void setBrightWhite()
+void setBrightWhite(layer foreground = FOREGROUND)
 {
-    std::cout << "\033[97m";
+    if (foreground == FOREGROUND)
+    {
+        std::cout << "\033[97m";
+    }
+    else
+    {
+        std::cout << "\033[107m";
+    }
 }

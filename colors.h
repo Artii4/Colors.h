@@ -204,3 +204,35 @@ void setBrightWhite(layer foreground = FOREGROUND)
         std::cout << "\033[107m";
     }
 }
+
+void resetAll()
+{
+    std::cout << "\033[0m";
+}
+
+// Font-related functions
+
+void setBold()
+{
+    std::cout << "\033[1m";
+}
+
+void setThin()
+{
+    std::cout << "\033[2m";
+}
+
+void setItalic()
+{
+    std::cout << "\033[3m";
+}
+
+void setUnderline()
+{
+    std::cout << "\033[4m";
+}
+
+void setBlink()
+{
+    std::cout << "\033[5m";
+}

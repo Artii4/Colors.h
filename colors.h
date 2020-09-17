@@ -1,11 +1,10 @@
 #include <iostream>
+#include <string>
 
-// This is a Color library for outputting text with colors.
-// You can use this like <iostream>, with the << operator
+// This is a Color library for outputting text with colors
+// The library consists of functions that set colors, without the user having to enter escape codes manually
 
-namespace colors
+void setRed()
 {
-    void setRed()
-    {
-    }
+    std::cout << "\033[31m";
 }

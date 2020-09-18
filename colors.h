@@ -6,6 +6,9 @@
 
 // The layout is simple - To set a color, write "set", and then the color.
 // For example, "setBlack()" sets the color to be black
+
+// NOTE: Not all color or font changes are compatible with every single system. This works only on MAC/LINUX.
+
 enum layer
 {
     FOREGROUND,

@@ -35,7 +35,7 @@ Here is a list of every function:
 ```cpp
 setRed();           // To change the background color, add the BACKGROUND argument like seen below
 setRed(BACKGROUND); // The BACKGROUND argument
-setBlack()
+setBlack();
 setGreen();
 setYellow();
 setBlue();

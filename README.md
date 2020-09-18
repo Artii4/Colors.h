@@ -68,3 +68,7 @@ setBlink();
 ```
 
 That's it! Colors just makes it simpler to output text to the console, but with colors.
+
+#### Note:
+
+Not all functions are compatible with every terminal, so some are more compatible than others.

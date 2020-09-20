@@ -8,6 +8,7 @@ Colors is a library for color output with C++.
 #include <iostream>
 #include "colors.h"
 
+using namespace colors;
 int main()
 {
     setRed();   // Colors function
@@ -33,6 +34,9 @@ These functions set your output text to be Black, red and then bold.
 Here is a list of every function:
 
 ```cpp
+using namespace colors; // This library is in a namespace
+
+
 setRed();           // To change the background color, add the BACKGROUND argument like seen below
 setRed(BACKGROUND); // The BACKGROUND argument
 setBlack();
@@ -61,10 +65,14 @@ setBold();
 setThin();
 setItalic();
 setUnderline();
-
-// Not widely supported
 setBlink();
 
+// Cursor-related functions
+setCursorTo(/*Row, Column*/)   // "Amount" in these functions is 1 by default
+moveCursorUp(/*Amount*/);
+moveCursorDown(/*Amount*/);
+moveCursorLeft(/*Amount*/);
+moveCursorRight(/*Amount*/);
 ```
 
 That's it! Colors just makes it simpler to output text to the console, but with colors.

@@ -68,7 +68,7 @@ setUnderline();
 setBlink();
 
 // Cursor-related functions
-setCursorTo(/*Row, Column*/)   // "Amount" in these functions is 1 by default
+setCursorTo(/*Row, Column*/);   // "Amount" in these functions is 1 by default
 moveCursorUp(/*Amount*/);
 moveCursorDown(/*Amount*/);
 moveCursorLeft(/*Amount*/);

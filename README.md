@@ -78,7 +78,7 @@ moveCursorLeft(/*Amount*/);
 moveCursorRight(/*Amount*/);
 
 // Reset properties
-resetColors(BACKGROUND);    // Resets backrgound color
+resetColors(BACKGROUND);    // Resets background color
 resetBoldness();            // Resets boldness
 ```
 

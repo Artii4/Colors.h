@@ -37,7 +37,7 @@ Here is a list of every function:
 using namespace colors; // This library is in a namespace
 
 
-setRed();           // To change the background color, add the BACKGROUND argument like seen below
+setRed();   // To change the background color, add the BACKGROUND argument like seen below
 setRed(BACKGROUND); // The BACKGROUND argument
 setBlack();
 setGreen();
@@ -57,6 +57,9 @@ setBrightMagenta();
 setBrightCyan();
 setBrightWhite();
 
+// RGB
+rgb(100, 12, 30, BACKGROUND);   // Sets the background to be dark-red
+
 // Reset all options
 resetAll();
 
@@ -73,6 +76,10 @@ moveCursorUp(/*Amount*/);
 moveCursorDown(/*Amount*/);
 moveCursorLeft(/*Amount*/);
 moveCursorRight(/*Amount*/);
+
+// Reset properties
+resetColors(BACKGROUND);    // Resets backrgound color
+resetBoldness();            // Resets boldness
 ```
 
 That's it! Colors just makes it simpler to output text to the console, but with colors.

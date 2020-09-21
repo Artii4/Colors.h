@@ -17,6 +17,25 @@ namespace colors
         BACKGROUND
     };
 
+    // RGB -> Change font color in RGB
+    void rgb(int r = 0, int g = 0, int b = 0, layer foreground = FOREGROUND)
+    {
+        std::string R = std::to_string(r);
+        std::string G = std::to_string(g);
+        std::string B = std::to_string(b);
+
+        std::string result = R + G + B + "m";
+        if (foreground == FOREGROUND)
+        {
+            result = "\033[38;2" + result;
+        }
+        else
+        {
+            result = "\033[48;2" + result;
+        }
+        std::cout << result;
+    }
+
     void setBlack(layer foreground = FOREGROUND)
     {
         if (foreground == FOREGROUND)
@@ -276,4 +295,23 @@ namespace colors
     {
         system("clear");
     }
-};
+
+    // Resetting properties
+
+    void resetColors(layer foreground = FOREGROUND)
+    {
+        if (foreground == FOREGROUND)
+        {
+            std::cout << "\033[39m";
+        }
+        else
+        {
+            std::cout << "\033[49m";
+        }
+    }
+
+    void resetBoldness()
+    {
+        std::cout << "\033[22m";
+    }
+}; // namespace colors

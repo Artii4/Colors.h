@@ -17,6 +17,13 @@ namespace colors
         BACKGROUND
     };
 
+    enum position
+    {
+        TOEND,
+        TOBEGINNING,
+        ALL
+    };
+
     // RGB -> Change font color in RGB
     void rgb(int r = 0, int g = 0, int b = 0, layer foreground = FOREGROUND)
     {
@@ -313,5 +320,22 @@ namespace colors
     void resetBoldness()
     {
         std::cout << "\033[22m";
+    }
+
+    // Line deletion
+    void eraseLine(position pos)
+    {
+        if (pos == TOEND)
+        {
+            std::cout << "\033[0K";
+        }
+        else if (pos == TOBEGINNING)
+        {
+            std::cout << "\033[1K";
+        }
+        else
+        {
+            std::cout << "\033[2K";
+        }
     }
 }; // namespace colors

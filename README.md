@@ -8,11 +8,10 @@ Colors is a library for color output with C++.
 #include <iostream>
 #include "colors.h"
 
-using namespace colors;
 int main()
 {
-    setRed();   // Colors function
-    setBold();  // Colors function
+    colors::setRed();   // Colors function
+    colors::setBold();  // Colors function
 
     std::cout << "Hello!";
     return 0;

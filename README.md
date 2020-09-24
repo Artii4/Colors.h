@@ -79,8 +79,8 @@ moveCursorRight(/*Amount*/);
 // Reset properties
 resetColors(BACKGROUND);    // Resets background color
 resetBoldness();            // Resets boldness
-noBlink();                  // No blink
-noUnderline();              // No underline
+noBlink();                  // No blinking text
+noUnderline();              // No underline on text
 
 // Deleting text
 eraseLine();            // Deletes text until end of line

@@ -6,7 +6,7 @@ Colors is a library for color output with C++.
 
 ```cpp
 #include <iostream>
-#include "colors.h"
+#include "colors.hpp"
 
 using namespace colors;
 int main()

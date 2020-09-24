@@ -10,8 +10,8 @@ Colors is a library for color output with C++.
 
 int main()
 {
-    colors::setRed();   // Colors function
-    colors::setBold();  // Colors function
+    colors::setRed();   // Sets the text color to be red
+    colors::setBold();  // Sets the text to be bold
 
     std::cout << "Hello!";
     return 0;

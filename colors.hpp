@@ -322,6 +322,16 @@ namespace colors
         std::cout << "\033[22m";
     }
 
+    void noUnderLine()
+    {
+        std::cout << "\033[24m";
+    }
+
+    void noBlink()
+    {
+        std::cout << "\033[25m";
+    }
+
     // Line deletion
     void eraseLine(position pos = TOEND)
     {

@@ -322,7 +322,7 @@ namespace colors
         std::cout << "\033[22m";
     }
 
-    void noUnderLine()
+    void noUnderline()
     {
         std::cout << "\033[24m";
     }

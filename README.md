@@ -81,10 +81,10 @@ resetColors(BACKGROUND);    // Resets background color
 resetBoldness();            // Resets boldness
 
 // Deleting text
-eraseLine();           // Deletes text until end of line
-eraseLine(TOBEGINNING) // Deletes text until beginning of line
-eraseLine(ALL)         // Deletes text on line
-eraseLine(TOEND)       // Deletes text until end of line (explicit)
+eraseLine();            // Deletes text until end of line
+eraseLine(TOBEGINNING); // Deletes text until beginning of line
+eraseLine(ALL);         // Deletes text on line
+eraseLine(TOEND);       // Deletes text until end of line (explicit)
 
 // Enumerations:
 //

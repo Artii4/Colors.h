@@ -80,6 +80,21 @@ moveCursorRight(/*Amount*/);
 // Reset properties
 resetColors(BACKGROUND);    // Resets background color
 resetBoldness();            // Resets boldness
+
+// Deleting text
+eraseLine();           // Deletes text until end of line
+eraseLine(TOBEGINNING) // Deletes text until beginning of line
+eraseLine(ALL)         // Deletes text on line
+eraseLine(TOEND)       // Deletes text until end of line (explicit)
+
+// Enumerations:
+//
+// FOREGROUND -> To apply a color to text (setRed(), setBlue(), etc.)
+// BACKGROUND -> To apply a color to background of text (setRed, setBlue, etc.)
+//
+// ALL        -> To delete line                     (eraseLine())
+// TOEND      -> To delete until end of line        (eraseLine())
+// TOBEGINNIG -> To delete until beginning of line  (eraseLine())
 ```
 
 That's it! Colors just makes it simpler to output text to the console, but with colors.

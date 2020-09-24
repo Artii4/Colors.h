@@ -323,7 +323,7 @@ namespace colors
     }
 
     // Line deletion
-    void eraseLine(position pos)
+    void eraseLine(position pos = TOEND)
     {
         if (pos == TOEND)
         {

@@ -11,13 +11,13 @@
 
 namespace colors
 {
-    enum layer
+    enum class layer
     {
         FOREGROUND,
         BACKGROUND
     };
 
-    enum position
+    enum class position
     {
         TOEND,
         TOBEGINNING,
@@ -25,14 +25,14 @@ namespace colors
     };
 
     // RGB -> Change font color in RGB
-    void rgb(int r = 0, int g = 0, int b = 0, layer foreground = FOREGROUND)
+    void rgb(int r = 0, int g = 0, int b = 0, layer foreground = layer::FOREGROUND)
     {
         std::string R = std::to_string(r);
         std::string G = std::to_string(g);
         std::string B = std::to_string(b);
 
         std::string result = R + G + B + "m";
-        if (foreground == FOREGROUND)
+        if (foreground == layer::FOREGROUND)
         {
             result = "\033[38;2" + result;
         }
@@ -43,9 +43,9 @@ namespace colors
         std::cout << result;
     }
 
-    void setBlack(layer foreground = FOREGROUND)
+    void setBlack(layer foreground = layer::FOREGROUND)
     {
-        if (foreground == FOREGROUND)
+        if (foreground == layer::FOREGROUND)
         {
             std::cout << "\033[30m";
         }
@@ -55,9 +55,9 @@ namespace colors
         }
     }
 
-    void setRed(layer foreground = FOREGROUND)
+    void setRed(layer foreground = layer::FOREGROUND)
     {
-        if (foreground == FOREGROUND)
+        if (foreground == layer::FOREGROUND)
         {
             std::cout << "\033[31m";
         }
@@ -67,9 +67,9 @@ namespace colors
         }
     }
 
-    void setGreen(layer foreground = FOREGROUND)
+    void setGreen(layer foreground = layer::FOREGROUND)
     {
-        if (foreground == FOREGROUND)
+        if (foreground == layer::FOREGROUND)
         {
             std::cout << "\033[32m";
         }
@@ -79,9 +79,9 @@ namespace colors
         }
     }
 
-    void setYellow(layer foreground = FOREGROUND)
+    void setYellow(layer foreground = layer::FOREGROUND)
     {
-        if (foreground == FOREGROUND)
+        if (foreground == layer::FOREGROUND)
         {
             std::cout << "\033[33m";
         }
@@ -91,9 +91,9 @@ namespace colors
         }
     }
 
-    void setBlue(layer foreground = FOREGROUND)
+    void setBlue(layer foreground = layer::FOREGROUND)
     {
-        if (foreground == FOREGROUND)
+        if (foreground == layer::FOREGROUND)
         {
             std::cout << "\033[34m";
         }
@@ -103,9 +103,9 @@ namespace colors
         }
     }
 
-    void setMagenta(layer foreground = FOREGROUND)
+    void setMagenta(layer foreground = layer::FOREGROUND)
     {
-        if (foreground == FOREGROUND)
+        if (foreground == layer::FOREGROUND)
         {
             std::cout << "\033[35m";
         }
@@ -115,9 +115,9 @@ namespace colors
         }
     }
 
-    void setCyan(layer foreground = FOREGROUND)
+    void setCyan(layer foreground = layer::FOREGROUND)
     {
-        if (foreground == FOREGROUND)
+        if (foreground == layer::FOREGROUND)
         {
             std::cout << "\033[36m";
         }
@@ -127,9 +127,9 @@ namespace colors
         }
     }
 
-    void setWhite(layer foreground = FOREGROUND)
+    void setWhite(layer foreground = layer::FOREGROUND)
     {
-        if (foreground == FOREGROUND)
+        if (foreground == layer::FOREGROUND)
         {
             std::cout << "\033[37m";
         }
@@ -140,9 +140,9 @@ namespace colors
     }
 
     // Brighter colors
-    void setGray(layer foreground = FOREGROUND)
+    void setGray(layer foreground = layer::FOREGROUND)
     {
-        if (foreground == FOREGROUND)
+        if (foreground == layer::FOREGROUND)
         {
             std::cout << "\033[90m";
         }
@@ -152,9 +152,9 @@ namespace colors
         }
     }
 
-    void setBrightRed(layer foreground = FOREGROUND)
+    void setBrightRed(layer foreground = layer::FOREGROUND)
     {
-        if (foreground == FOREGROUND)
+        if (foreground == layer::FOREGROUND)
         {
             std::cout << "\033[91m";
         }
@@ -164,9 +164,9 @@ namespace colors
         }
     }
 
-    void setBrightGreen(layer foreground = FOREGROUND)
+    void setBrightGreen(layer foreground = layer::FOREGROUND)
     {
-        if (foreground == FOREGROUND)
+        if (foreground == layer::FOREGROUND)
         {
             std::cout << "\033[92m";
         }
@@ -176,9 +176,9 @@ namespace colors
         }
     }
 
-    void setBrightYellow(layer foreground = FOREGROUND)
+    void setBrightYellow(layer foreground = layer::FOREGROUND)
     {
-        if (foreground == FOREGROUND)
+        if (foreground == layer::FOREGROUND)
         {
             std::cout << "\033[93m";
         }
@@ -188,9 +188,9 @@ namespace colors
         }
     }
 
-    void setBrightBlue(layer foreground = FOREGROUND)
+    void setBrightBlue(layer foreground = layer::FOREGROUND)
     {
-        if (foreground == FOREGROUND)
+        if (foreground == layer::FOREGROUND)
         {
             std::cout << "\033[94m";
         }
@@ -200,9 +200,9 @@ namespace colors
         }
     }
 
-    void setBrightMagenta(layer foreground = FOREGROUND)
+    void setBrightMagenta(layer foreground = layer::FOREGROUND)
     {
-        if (foreground == FOREGROUND)
+        if (foreground == layer::FOREGROUND)
         {
             std::cout << "\033[95m";
         }
@@ -212,9 +212,9 @@ namespace colors
         }
     }
 
-    void setBrightCyan(layer foreground = FOREGROUND)
+    void setBrightCyan(layer foreground = layer::FOREGROUND)
     {
-        if (foreground == FOREGROUND)
+        if (foreground == layer::FOREGROUND)
         {
             std::cout << "\033[96m";
         }
@@ -224,9 +224,9 @@ namespace colors
         }
     }
 
-    void setBrightWhite(layer foreground = FOREGROUND)
+    void setBrightWhite(layer foreground = layer::FOREGROUND)
     {
-        if (foreground == FOREGROUND)
+        if (foreground == layer::FOREGROUND)
         {
             std::cout << "\033[97m";
         }
@@ -305,9 +305,9 @@ namespace colors
 
     // Resetting properties
 
-    void resetColors(layer foreground = FOREGROUND)
+    void resetColors(layer foreground = layer::FOREGROUND)
     {
-        if (foreground == FOREGROUND)
+        if (foreground == layer::FOREGROUND)
         {
             std::cout << "\033[39m";
         }
@@ -333,13 +333,13 @@ namespace colors
     }
 
     // Line deletion
-    void eraseLine(position pos = TOEND)
+    void eraseLine(position pos = position::TOEND)
     {
-        if (pos == TOEND)
+        if (pos == position::TOEND)
         {
             std::cout << "\033[0K";
         }
-        else if (pos == TOBEGINNING)
+        else if (pos == position::TOBEGINNING)
         {
             std::cout << "\033[1K";
         }

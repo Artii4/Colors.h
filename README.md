@@ -24,20 +24,18 @@ Colors is a simple library. Here are a couple functions:
 
 ```cpp
 setBlack();
-setRed();
 setBold();
 ```
 
-These functions set your output text to be Black, red and then bold.
+These functions set your output text to be black and bold.
 
 Here is a list of every function:
 
 ```cpp
-using namespace colors; // This library is in a namespace
+using namespace colors;    // This library is in a namespace
 
-
-setRed();   // To change the background color, add the BACKGROUND argument like seen below
-setRed(BACKGROUND); // The BACKGROUND argument
+setRed();                  // To change background color, add layer::BACKGROUND
+setRed(layer::BACKGROUND); // The layer::BACKGROUND argument
 setBlack();
 setGreen();
 setYellow();
@@ -57,7 +55,7 @@ setBrightCyan();
 setBrightWhite();
 
 // RGB
-rgb(100, 12, 30, BACKGROUND);   // Sets the background to be dark-red
+rgb(100, 12, 30, layer::BACKGROUND);   // Sets the background to be dark-red
 
 // Reset all options
 resetAll();
@@ -77,25 +75,25 @@ moveCursorLeft(/*Amount*/);
 moveCursorRight(/*Amount*/);
 
 // Reset properties
-resetColors(BACKGROUND);    // Resets background color
-resetBoldness();            // Resets boldness
-noBlink();                  // No blinking text
-noUnderline();              // No underline on text
+resetColors(layer::BACKGROUND); // Resets background color
+resetBoldness();                // Resets boldness
+noBlink();                      // No blinking text
+noUnderline();                  // No underline on text
 
 // Deleting text
-eraseLine();            // Deletes text until end of line
-eraseLine(TOBEGINNING); // Deletes text until beginning of line
-eraseLine(ALL);         // Deletes text on line
-eraseLine(TOEND);       // Deletes text until end of line (explicit)
+eraseLine();                        // Deletes text until end of line
+eraseLine(position::TOBEGINNING);   // Deletes text until beginning of line
+eraseLine(position::ALL);           // Deletes text on line
+eraseLine(position::TOEND);         // Deletes text until end of line (explicit)
 
 // Enumerations:
 //
-// FOREGROUND -> To apply a color to text (setRed(), setBlue(), etc.)
-// BACKGROUND -> To apply a color to background of text (setRed, setBlue, etc.)
+// layer::FOREGROUND        -> To apply a color to text (setRed(), setBlue(), etc.)
+// layer::BACKGROUND        -> To apply a color to background of text (setRed, setBlue, etc.)
 //
-// ALL        -> To delete line                     (eraseLine())
-// TOEND      -> To delete until end of line        (eraseLine())
-// TOBEGINNIG -> To delete until beginning of line  (eraseLine())
+// position::ALL            -> To delete line                     (eraseLine())
+// position::TOEND          -> To delete until end of line        (eraseLine())
+// position::TOBEGINNING    -> To delete until beginning of line  (eraseLine())
 ```
 
 That's it! Colors just makes it simpler to output text to the console, but with colors.

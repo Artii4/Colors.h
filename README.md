@@ -86,6 +86,13 @@ eraseLine(position::TOBEGINNING);   // Deletes text until beginning of line
 eraseLine(position::ALL);           // Deletes text on line
 eraseLine(position::TOEND);         // Deletes text until end of line (explicit)
 
+// Clearing terminal
+eraseScreen();                      // Clears from cursor to end
+eraseScreen(position::TOEND)        // Clears from cursor to end (explicit)
+eraseScreen(position::TOBEGINNING)  // Clears from cursor to beginning
+eraseScreen(position::ALL)          // Clears all
+eraseScreen(position::CLEAR)        // Deletes lines in scrollback buffer
+
 // Enumerations:
 //
 // layer::FOREGROUND        -> To apply a color to text (setRed(), setBlue(), etc.)
@@ -94,6 +101,7 @@ eraseLine(position::TOEND);         // Deletes text until end of line (explicit)
 // position::ALL            -> To delete line                     (eraseLine())
 // position::TOEND          -> To delete until end of line        (eraseLine())
 // position::TOBEGINNING    -> To delete until beginning of line  (eraseLine())
+// position::CLEAR          -> To delete terminal buffer
 ```
 
 That's it! Colors just makes it simpler to output text to the console, but with colors.

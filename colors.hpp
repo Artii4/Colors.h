@@ -21,7 +21,8 @@ namespace colors
     {
         TOEND,
         TOBEGINNING,
-        ALL
+        ALL,
+        CLEAR
     };
 
     // RGB -> Change font color in RGB
@@ -346,6 +347,26 @@ namespace colors
         else
         {
             std::cout << "\033[2K";
+        }
+    }
+
+    void eraseScreen(position pos = position::TOEND)
+    {
+        if (pos == position::TOEND)
+        {
+            std::cout << "\033[J";
+        }
+        else if (pos == position::TOBEGINNING)
+        {
+            std::cout << "\033[1J";
+        }
+        else if (pos == position::ALL)
+        {
+            std::cout << "\033[2J";
+        }
+        else if (pos == position::CLEAR)
+        {
+            std::cout << "\033[3J";
         }
     }
 }; // namespace colors

@@ -18,7 +18,7 @@ int main()
 }
 ```
 
-### Documentation
+## Documentation
 
 Colors is a simple library. Here are a couple functions:
 

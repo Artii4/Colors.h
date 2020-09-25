@@ -88,10 +88,10 @@ eraseLine(position::TOEND);         // Deletes text until end of line (explicit)
 
 // Clearing terminal
 eraseScreen();                      // Clears from cursor to end
-eraseScreen(position::TOEND)        // Clears from cursor to end (explicit)
-eraseScreen(position::TOBEGINNING)  // Clears from cursor to beginning
-eraseScreen(position::ALL)          // Clears all
-eraseScreen(position::CLEAR)        // Deletes lines in scrollback buffer
+eraseScreen(position::TOEND);       // Clears from cursor to end (explicit)
+eraseScreen(position::TOBEGINNING); // Clears from cursor to beginning
+eraseScreen(position::ALL);         // Clears all
+eraseScreen(position::CLEAR);       // Deletes lines in scrollback buffer
 
 // Enumerations:
 //

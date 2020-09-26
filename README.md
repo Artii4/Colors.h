@@ -87,11 +87,11 @@ eraseLine(position::TOBEGINNING);   // Deletes text until beginning of line
 eraseLine(position::ALL);           // Deletes text on line
 
 // Clearing terminal
-eraseScreen();                      // Clears from cursor to end
-eraseScreen(position::TOEND);       // Clears from cursor to end (explicit)
-eraseScreen(position::TOBEGINNING); // Clears from cursor to beginning
+eraseScreen();                      // Clears from cursor to bottom of console/terminal
+eraseScreen(position::TOEND);       // Clears from cursor to bottom of console/terminal (explicit)
+eraseScreen(position::TOBEGINNING); // Clears from cursor to beginning of console/terminal
 eraseScreen(position::ALL);         // Clears all
-eraseScreen(position::CLEAR);       // Deletes lines in scrollback buffer
+eraseScreen(position::CLEAR);       // Deletes lines in scrollback buffer of console/terminal
 
 // Enumerations:
 //

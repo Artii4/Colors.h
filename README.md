@@ -82,9 +82,9 @@ noUnderline();                  // No underline on text
 
 // Deleting text
 eraseLine();                        // Deletes text until end of line
+eraseLine(position::TOEND);         // Deletes text until end of line (explicit)
 eraseLine(position::TOBEGINNING);   // Deletes text until beginning of line
 eraseLine(position::ALL);           // Deletes text on line
-eraseLine(position::TOEND);         // Deletes text until end of line (explicit)
 
 // Clearing terminal
 eraseScreen();                      // Clears from cursor to end

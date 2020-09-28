@@ -101,7 +101,7 @@ eraseScreen(position::CLEAR);       // Deletes lines in scrollback buffer of con
 // position::ALL            -> To delete line                     (eraseLine())
 // position::TOEND          -> To delete until end of line        (eraseLine())
 // position::TOBEGINNING    -> To delete until beginning of line  (eraseLine())
-// position::CLEAR          -> To delete terminal buffer          (eraseSrceen())
+// position::CLEAR          -> To delete terminal buffer          (eraseScreen())
 ```
 
 That's it! Colors just makes it simpler to output text to the console, but with colors.

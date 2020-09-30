@@ -93,15 +93,24 @@ eraseScreen(position::TOBEGINNING); // Clears from cursor to beginning of consol
 eraseScreen(position::ALL);         // Clears all
 eraseScreen(position::CLEAR);       // Deletes lines in scrollback buffer of console/terminal
 
-// Enumerations:
-//
-// layer::FOREGROUND        -> To apply a color to text (setRed(), setBlue(), etc.)
-// layer::BACKGROUND        -> To apply a color to background of text (setRed(), setBlue(), etc.)
-//
-// position::ALL            -> To delete line                     (eraseLine())
-// position::TOEND          -> To delete until end of line        (eraseLine())
-// position::TOBEGINNING    -> To delete until beginning of line  (eraseLine())
-// position::CLEAR          -> To delete terminal buffer          (eraseScreen())
+/*
+Enumerations:
+|-----------------------|----------------------------------------|---------------------------|
+| Enumeration           | Purpose                                | Function(s)               |
+|-----------------------|----------------------------------------|---------------------------|
+| layer::BACKGROUND     | To apply a color to background of text | setRed(), setBlue(), etc. |
+|-----------------------|----------------------------------------|---------------------------|
+| layer::FOREGROUND     | To apply a color to text               | setRed(), setBlue(), etc. |
+|-----------------------|----------------------------------------|---------------------------|
+| position::ALL         | To delete line                         | eraseLine()               |
+|-----------------------|----------------------------------------|---------------------------|
+| position::TOEND       | To delete until end of line            | eraseLine()               |
+|-----------------------|----------------------------------------|---------------------------|
+| position::TOBEGINNING | To delete until beginning of line      | eraseLine()               |
+|-----------------------|----------------------------------------|---------------------------|
+| position::CLEAR       | To delete terminal buffer              | eraseScreen()             |
+|-----------------------|----------------------------------------|---------------------------|
+*/
 ```
 
 That's it! Colors just makes it simpler to output text to the console, but with colors.

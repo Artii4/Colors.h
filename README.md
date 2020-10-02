@@ -34,8 +34,7 @@ Here is a list of every function:
 ```cpp
 using namespace colors;    // This library is in a namespace
 
-setColor(color::red, layer::BACKGROUND); // The layer::BACKGROUND
- argument
+setColor(color::red, layer::BACKGROUND); // The layer::BACKGROUND argument
 setColor(color::red);
 setColor(color::green);
 setColor(color::yellow);

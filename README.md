@@ -10,7 +10,7 @@ Colors is a library for color output with C++.
 
 int main()
 {
-    colors::setRed();   // Sets the text color to be red
+    colors::setColor(color::red);   // Sets the text color to be red
     colors::setBold();  // Sets the text to be bold
 
     std::cout << "Hello!";
@@ -34,25 +34,25 @@ Here is a list of every function:
 ```cpp
 using namespace colors;    // This library is in a namespace
 
-setRed();                  // To change background color, add layer::BACKGROUND
-setRed(layer::BACKGROUND); // The layer::BACKGROUND argument
-setBlack();
-setGreen();
-setYellow();
-setBlue();
-setMagenta();
-setCyan();
-setWhite();
-setGray();
+setColor(color::red, layer::BACKGROUND); // The layer::BACKGROUND
+ argument
+setColor(color::red);
+setColor(color::green);
+setColor(color::yellow);
+setColor(color::blue);
+setColor(color::magenta);
+setColor(color::cyan);
+setColor(color::white);
+setColor(color::gray);
 
 // Bright colours
-setBrightRed();
-setBrightGreen();
-setBrightYellow();
-setBrightBlue();
-setBrightMagenta();
-setBrightCyan();
-setBrightWhite();
+setColor(color::brightRed);
+setColor(color::brightGreen);
+setColor(color::brightYellow);
+setColor(color::brightBlue);
+setColor(color::brightMagenta);
+setColor(color::brightCyan);
+setColor(color::brightWhite);
 
 // RGB
 rgb(100, 12, 30, layer::BACKGROUND);   // Sets the background to be dark-red
@@ -110,6 +110,26 @@ Enumerations:
 |-----------------------|----------------------------------------|---------------------------|
 | position::CLEAR       | To delete terminal buffer              | eraseScreen()             |
 |-----------------------|----------------------------------------|---------------------------|
+ Other enumerations include colors,
+ which are all used in the setColor() function:
+ 
+ colors::red
+ colors::green
+ colors::yellow
+ colors::blue
+ colors::magenta
+ colors::cyan
+ colors::white
+ colors::gray
+ 
+ colors::brightRed
+ colors::brightGreen
+ colors::brightYellow
+ colors::brightBlue
+ colors::brightMagenta
+ colors::brightCyan
+ colors::brightWhite
+ colors::brightGray
 */
 ```
 

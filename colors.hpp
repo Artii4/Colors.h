@@ -4,7 +4,7 @@
 /*
  * COLORS.h VERSION 2 improvements:
  *
- * This library is in development, not recommended for developing purposes
+ * This branch is in development and experimental
  * This branch is made because of multiple issues, but mainly because there
  * are multiple functions for each color. This can be very hard to work with,
  * especially as the library grows This version, version 2, is going to be in
@@ -13,6 +13,9 @@
  * In this version, there is only one function to change a color instead of
  * multiple function like "setRed()" and "setBlue()". This will make the
  * library smaller.
+ *
+ * Other features are going to be added as well!
+ * Feel free to contribute
  *
  * Project started on 2 oct 2020
  * GPL 3 License

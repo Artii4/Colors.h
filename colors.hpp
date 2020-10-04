@@ -4,11 +4,11 @@
 /*
  * COLORS.h VERSION 2 improvements:
  *
- * This branch is in development and experimental
+ * NOTE: This branch is in development and experimental
+ *
  * This branch is made because of multiple issues, but mainly because there
- * are multiple functions for each color. This can be very hard to work with,
- * especially as the library grows This version, version 2, is going to be in
- * development as well as the previous branch.
+ * are multiple functions to change the color of text. This can be very hard to
+ * work with, especially as the library grows.
  *
  * In this version, there is only one function to change a color instead of
  * multiple function like "setRed()" and "setBlue()". This will make the
@@ -138,7 +138,8 @@ layer::FOREGROUND)
 	std::string G = std::to_string(g);
 	std::string B = std::to_string(b);
 
-	std::string result = R+G+B+"m";
+	std::string result;
+	result = R+';'+G+';'+B+"m";
 	if (foreground==layer::FOREGROUND) {
 		result = "\033[38;2"+result;
 	}
@@ -273,4 +274,93 @@ void eraseScreen(position pos = position::TOEND)
 		std::cout << "\033[3J";
 	}
 }
+
+// Rectangle drawing -> experimental!
+template<typename T>
+class Rect {
+	T x;
+	T y;
+	T sizeX;
+	T sizeY;
+	char charInside;
+public:
+	Rect(T x, T y, T sizeX, T sizeY)
+	{
+		this->x = x;
+		this->y = y;
+		this->sizeX = sizeX;
+		this->sizeY = sizeY;
+	}
+	// Getters and setters...
+	/***********************/
+	T get_x() const
+	{
+		return x;
+	}
+	void set_x(T x)
+	{
+		Rect::x = x;
+	}
+	T get_y() const
+	{
+		return y;
+	}
+	void set_y(T y)
+	{
+		Rect::y = y;
+	}
+	T get_size_x() const
+	{
+		return sizeX;
+	}
+	void set_size_x(T size_x)
+	{
+		sizeX = size_x;
+	}
+	T get_size_y() const
+	{
+		return sizeY;
+	}
+	void set_size_y(T size_y)
+	{
+		sizeY = size_y;
+	}
+	char get_char_inside() const
+	{
+		return charInside;
+	}
+	void set_char_inside(char char_inside)
+	{
+		charInside = char_inside;
+	}
+	/***********************/
+
+	// Main draw function
+	void draw()
+	{
+#define c std::cout // To not type std::cout all the time
+		// Each row
+		for (int i = 0; i<sizeX; i++) {
+			// Each column/cell
+			for (int j = 0; j<sizeY; j++) {
+				// If in corner
+				if (j==0 && i==0 || i==sizeX-1 && j==sizeX) {
+					c << '+';
+				}
+				// If on side
+				else if (j==0 || j==sizeY-1) {
+					c << '|';
+				}
+				// If on top/bottom
+				else if (i==0 || i==sizeX-1) {
+					c << '-';
+				}
+				// If inside the rectangle
+				else {
+					c << ' ';
+				}
+			}
+		}
+	}
+};
 }; // namespace colors

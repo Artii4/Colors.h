@@ -11,7 +11,7 @@ Colors is a library for color output with C++.
 int main()
 {
     colors::setColor(color::red);   // Sets the text color to be red
-    colors::setBold();  // Sets the text to be bold
+    colors::setBold();              // Sets the text to be bold
 
     std::cout << "Hello!";
     return 0;
@@ -23,7 +23,7 @@ int main()
 Colors is a simple library. Here are a couple functions:
 
 ```cpp
-setBlack();
+setColor(color::black);
 setBold();
 ```
 
@@ -112,23 +112,23 @@ Enumerations:
  Other enumerations include colors,
  which are all used in the setColor() function:
  
- colors::red
- colors::green
- colors::yellow
- colors::blue
- colors::magenta
- colors::cyan
- colors::white
- colors::gray
- 
- colors::brightRed
- colors::brightGreen
- colors::brightYellow
- colors::brightBlue
- colors::brightMagenta
- colors::brightCyan
- colors::brightWhite
- colors::brightGray
+ color::red
+ color::green
+ color::yellow
+ color::blue
+ color::magenta
+ color::cyan
+ color::white
+ color::gray
+
+ color::brightRed
+ color::brightGreen
+ color::brightYellow
+ color::brightBlue
+ color::brightMagenta
+ color::brightCyan
+ color::brightWhite
+ color::brightGray
 */
 ```
 

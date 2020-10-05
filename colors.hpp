@@ -131,8 +131,7 @@ void setColor(color color = color::red, layer layer = layer::FOREGROUND)
 	}
 }
 // RGB -> Change font color in RGB
-void rgb(int r = 0, int g = 0, int b = 0, layer foreground =
-layer::FOREGROUND)
+void rgb(int r = 0, int g = 0, int b = 0, layer foreground = layer::FOREGROUND)
 {
 	std::string R = std::to_string(r);
 	std::string G = std::to_string(g);
@@ -275,92 +274,55 @@ void eraseScreen(position pos = position::TOEND)
 	}
 }
 
-// Rectangle drawing -> experimental!
-template<typename T>
+// A class to draw rectangles.
+// Takes 4 parameters: Width, Height, X-Offset and Y-Offset.
+// All should be of integer type
 class Rect {
-	T x;
-	T y;
-	T sizeX;
-	T sizeY;
-	char charInside;
 public:
-	Rect(T x, T y, T sizeX, T sizeY)
+	Rect(int sizeX, int sizeY, int x = 0, int y = 0)
 	{
 		this->x = x;
 		this->y = y;
 		this->sizeX = sizeX;
 		this->sizeY = sizeY;
 	}
-	// Getters and setters...
-	/***********************/
-	T get_x() const
-	{
-		return x;
-	}
-	void set_x(T x)
-	{
-		Rect::x = x;
-	}
-	T get_y() const
-	{
-		return y;
-	}
-	void set_y(T y)
-	{
-		Rect::y = y;
-	}
-	T get_size_x() const
-	{
-		return sizeX;
-	}
-	void set_size_x(T size_x)
-	{
-		sizeX = size_x;
-	}
-	T get_size_y() const
-	{
-		return sizeY;
-	}
-	void set_size_y(T size_y)
-	{
-		sizeY = size_y;
-	}
-	char get_char_inside() const
-	{
-		return charInside;
-	}
-	void set_char_inside(char char_inside)
-	{
-		charInside = char_inside;
-	}
-	/***********************/
-
 	// Main draw function
 	void draw()
 	{
-#define c std::cout // To not type std::cout all the time
 		// Each row
-		for (int i = 0; i<sizeX; i++) {
+		for (int yPosition = 0; yPosition<sizeY; yPosition++) {
+			moveCursorRight(x);
+			moveCursorDown(y);
 			// Each column/cell
-			for (int j = 0; j<sizeY; j++) {
+			for (int xPosition = 0; xPosition<sizeX; xPosition++) {
 				// If in corner
-				if (j==0 && i==0 || i==sizeX-1 && j==sizeX) {
-					c << '+';
+				if (xPosition==0 && yPosition==0
+						|| xPosition==0 && yPosition==sizeY-1
+						|| xPosition==sizeX-1 && yPosition==0
+						|| xPosition==sizeX-1 && yPosition==sizeY-1) {
+					std::cout << '+';
 				}
-				// If on side
-				else if (j==0 || j==sizeY-1) {
-					c << '|';
+					// If on side
+				else if (yPosition==0 || yPosition==sizeY-1) {
+					std::cout << "-";
 				}
-				// If on top/bottom
-				else if (i==0 || i==sizeX-1) {
-					c << '-';
+					// If on top/bottom
+				else if (xPosition==0 || xPosition==sizeX-1) {
+					std::cout << '|';
 				}
-				// If inside the rectangle
-				else {
-					c << ' ';
-				}
+					// If inside the rectangle
+				else
+					std::cout << charInside;
 			}
+			std::cout << '\n';
 		}
 	}
+
+	// Properties
+	int x;
+	int y;
+	int sizeX;
+	int sizeY;
+	char charInside = ' ';
 };
-}; // namespace colors
+} // namespace colors

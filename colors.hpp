@@ -24,12 +24,12 @@
 // Enums are of type char to save memory
 
 namespace colors {
-enum class layer : char {
+enum layer : char {
 	FOREGROUND,
 	BACKGROUND
 };
 
-enum class position : char {
+enum position : char {
 	TOEND,
 	TOBEGINNING,
 	ALL,
@@ -37,7 +37,7 @@ enum class position : char {
 };
 
 // Enum with basic colors
-enum class color : char {
+enum color : char {
 	black,
 	red,
 	green,
@@ -57,81 +57,81 @@ enum class color : char {
 
 };
 
-void setColor(color color = color::red, layer layer = layer::FOREGROUND)
+void setColor(color color = red, layer layer = FOREGROUND)
 {
-	if (layer==layer::FOREGROUND) {
+	if (layer==FOREGROUND) {
 		// Checking for each possible foreground color
-		if (color==color::black)
+		if (color==black)
 			std::cout << "\033[30m";
-		else if (color==color::red)
+		else if (color==red)
 			std::cout << "\033[31m";
-		else if (color==color::green)
+		else if (color==green)
 			std::cout << "\033[32m";
-		else if (color==color::yellow)
+		else if (color==yellow)
 			std::cout << "\033[33m";
-		else if (color==color::blue)
+		else if (color==blue)
 			std::cout << "\033[34m";
-		else if (color==color::magenta)
+		else if (color==magenta)
 			std::cout << "\033[35m";
-		else if (color==color::cyan)
+		else if (color==cyan)
 			std::cout << "\033[36m";
-		else if (color==color::white)
+		else if (color==white)
 			std::cout << "\033[37m";
-		else if (color==color::gray)
+		else if (color==gray)
 			std::cout << "\033[90m";
-		else if (color==color::brightRed)
+		else if (color==brightRed)
 			std::cout << "\033[91m";
-		else if (color==color::brightGreen)
+		else if (color==brightGreen)
 			std::cout << "\033[92m";
-		else if (color==color::brightYellow)
+		else if (color==brightYellow)
 			std::cout << "\033[93m";
-		else if (color==color::brightBlue)
+		else if (color==brightBlue)
 			std::cout << "\033[94m";
-		else if (color==color::brightMagenta)
+		else if (color==brightMagenta)
 			std::cout << "\033[95m";
-		else if (color==color::brightCyan)
+		else if (color==brightCyan)
 			std::cout << "\033[96m";
-		else if (color==color::brightWhite)
+		else if (color==brightWhite)
 			std::cout << "\033[97m";
 	}
-	else if (layer==layer::BACKGROUND) {
+	else if (layer==BACKGROUND) {
 		// Checking for each possible background color
-		if (color==color::black)
+		if (color==black)
 			std::cout << "\033[40m";
-		else if (color==color::red)
+		else if (color==red)
 			std::cout << "\033[41m";
-		else if (color==color::green)
+		else if (color==green)
 			std::cout << "\033[42m";
-		else if (color==color::yellow)
+		else if (color==yellow)
 			std::cout << "\033[43m";
-		else if (color==color::blue)
+		else if (color==blue)
 			std::cout << "\033[44m";
-		else if (color==color::magenta)
+		else if (color==magenta)
 			std::cout << "\033[45m";
-		else if (color==color::cyan)
+		else if (color==cyan)
 			std::cout << "\033[46m";
-		else if (color==color::white)
+		else if (color==white)
 			std::cout << "\033[47m";
-		else if (color==color::gray)
+		else if (color==gray)
 			std::cout << "\033[100m";
-		else if (color==color::brightRed)
+		else if (color==brightRed)
 			std::cout << "\033[101m";
-		else if (color==color::brightGreen)
+		else if (color==brightGreen)
 			std::cout << "\033[102m";
-		else if (color==color::brightYellow)
+		else if (color==brightYellow)
 			std::cout << "\033[103m";
-		else if (color==color::brightBlue)
+		else if (color==brightBlue)
 			std::cout << "\033[104m";
-		else if (color==color::brightMagenta)
+		else if (color==brightMagenta)
 			std::cout << "\033[105m";
-		else if (color==color::brightCyan)
+		else if (color==brightCyan)
 			std::cout << "\033[106m";
-		else if (color==color::brightWhite)
+		else if (color==brightWhite)
 			std::cout << "\033[107m";
 	}
 }
 // RGB -> Change font color in RGB
-void rgb(int r = 0, int g = 0, int b = 0, layer foreground = layer::FOREGROUND)
+void rgb(int r = 0, int g = 0, int b = 0, layer foreground = FOREGROUND)
 {
 	std::string R = std::to_string(r);
 	std::string G = std::to_string(g);
@@ -139,7 +139,7 @@ void rgb(int r = 0, int g = 0, int b = 0, layer foreground = layer::FOREGROUND)
 
 	std::string result;
 	result = R+';'+G+';'+B+"m";
-	if (foreground==layer::FOREGROUND) {
+	if (foreground==FOREGROUND) {
 		result = "\033[38;2"+result;
 	}
 	else {
@@ -219,9 +219,9 @@ void clear()
 // Resetting properties
 
 void resetColors(layer
-foreground = layer::FOREGROUND)
+foreground = FOREGROUND)
 {
-	if (foreground==layer::FOREGROUND) {
+	if (foreground==FOREGROUND) {
 		std::cout << "\033[39m";
 	}
 	else {
@@ -245,12 +245,12 @@ void noBlink()
 }
 
 // Line deletion
-void eraseLine(position pos = position::TOEND)
+void eraseLine(position pos = TOEND)
 {
-	if (pos==position::TOEND) {
+	if (pos==TOEND) {
 		std::cout << "\033[0K";
 	}
-	else if (pos==position::TOBEGINNING) {
+	else if (pos==TOBEGINNING) {
 		std::cout << "\033[1K";
 	}
 	else {
@@ -258,18 +258,18 @@ void eraseLine(position pos = position::TOEND)
 	}
 }
 
-void eraseScreen(position pos = position::TOEND)
+void eraseScreen(position pos = TOEND)
 {
-	if (pos==position::TOEND) {
+	if (pos==TOEND) {
 		std::cout << "\033[J";
 	}
-	else if (pos==position::TOBEGINNING) {
+	else if (pos==TOBEGINNING) {
 		std::cout << "\033[1J";
 	}
-	else if (pos==position::ALL) {
+	else if (pos==ALL) {
 		std::cout << "\033[2J";
 	}
-	else if (pos==position::CLEAR) {
+	else if (pos==CLEAR) {
 		std::cout << "\033[3J";
 	}
 }

@@ -1,3 +1,6 @@
+#ifndef colors
+#define colors
+
 #include <iostream>
 #include <string>
 
@@ -24,12 +27,12 @@
 // Enums are of type char to save memory
 
 namespace colors {
-enum layer : char {
+enum layer: char {
 	FOREGROUND,
 	BACKGROUND
 };
 
-enum position : char {
+enum position: char {
 	TOEND,
 	TOBEGINNING,
 	ALL,
@@ -37,7 +40,7 @@ enum position : char {
 };
 
 // Enum with basic colors
-enum color : char {
+enum color: char {
 	black,
 	red,
 	green,
@@ -326,3 +329,4 @@ public:
 	char charInside = ' ';
 };
 } // namespace colors
+#endif

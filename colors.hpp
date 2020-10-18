@@ -4,28 +4,6 @@
 #include <iostream>
 #include <string>
 
-/*
- * COLORS.h VERSION 2 improvements:
- *
- * NOTE: This branch is in development and experimental
- *
- * This branch is made because of multiple issues, but mainly because there
- * are multiple functions to change the color of text. This can be very hard to
- * work with, especially as the library grows.
- *
- * In this version, there is only one function to change a color instead of
- * multiple function like "setRed()" and "setBlue()". This will make the
- * library smaller.
- *
- * Other features are going to be added as well!
- * Feel free to contribute
- *
- * Project started on 2 oct 2020
- * GPL 3 License
- */
-
-// Enums are of type char to save memory
-
 namespace colors {
 enum layer: char {
 	FOREGROUND,
@@ -39,7 +17,6 @@ enum position: char {
 	CLEAR
 };
 
-// Enum with basic colors
 enum color: char {
 	black,
 	red,
@@ -133,7 +110,7 @@ void setColor(color color = red, layer layer = FOREGROUND)
 			std::cout << "\033[107m";
 	}
 }
-// RGB -> Change font color in RGB
+
 void rgb(int r = 0, int g = 0, int b = 0, layer foreground = FOREGROUND)
 {
 	std::string R = std::to_string(r);
@@ -183,8 +160,6 @@ void setBlink()
 	std::cout << "\033[5m";
 }
 
-// SetCursorTo -> Sets the cursor to a certain column and row
-
 void setCursorTo(int row = 0, int col = 0)
 {
 	std::string str =
@@ -212,14 +187,10 @@ void moveCursorLeft(int amount = 1)
 	std::cout << "\033["+std::to_string(amount)+"D";
 }
 
-// Clears screen
-
 void clear()
 {
 	system("clear");
 }
-
-// Resetting properties
 
 void resetColors(layer
 foreground = FOREGROUND)
@@ -247,7 +218,6 @@ void noBlink()
 	std::cout << "\033[25m";
 }
 
-// Line deletion
 void eraseLine(position pos = TOEND)
 {
 	if (pos==TOEND) {
@@ -277,9 +247,6 @@ void eraseScreen(position pos = TOEND)
 	}
 }
 
-// A class to draw rectangles.
-// Takes 4 parameters: Width, Height, X-Offset and Y-Offset.
-// All should be of integer type
 class Rect {
 public:
 	Rect(int sizeX, int sizeY, int x = 0, int y = 0)
@@ -320,8 +287,6 @@ public:
 			std::cout << '\n';
 		}
 	}
-
-	// Properties
 	int x;
 	int y;
 	int sizeX;
